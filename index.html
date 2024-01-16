@@ -16,38 +16,93 @@
     <script src="https://unpkg.com/@popperjs/core@2"></script>
     <script src="https://unpkg.com/tippy.js@6"></script>
 
+
+    <style>
+        p{
+        font-size: 20px;
+        }
+    </style>
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg fixed-top">
 
-
-
-
-    <a class="navbar-brand" href="#">Navbar</a>
-</nav>
 
 <div id="fullpage">
     <div class="section" id="section1">
-        <!--    Total cases: 257510-->
-        <!--    Currently in hospital: 1365-->
-        <!--    Total deaths: 678-->
+        <nav class="navbar bg-body-tertiary fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Navbar</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link" href="#">Section 1</a>
+                        <a class="nav-link" href="#">Section 2</a>
+                        <a class="nav-link" href="#">Section 3</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
 
-        <!--    The number of Covid-19 cases in Singapore has grown to 257510, with 2079 new cases reported on 31 Dec.-->
-        <!--    Of these, 2030 were reported in the community and 40 in the workers’ dormitories. The remaining nine cases were imported.-->
-        <!--    A further 2275 patients were discharged, including 366 seniors aged above 60. A total of 238909 cases have recovered to date.-->
+        <div class = "container" style="margin: auto;">
+            <h1>
+                Cases
+            </h1>
+            <div class = "row justify-content-center align-items-center row-cols-8">
+                <div class = "col-3">
+                    <p><span style="font-weight: bolder">Total cases:</span> 257510</p>
+                    <p><span style="font-weight: bolder">Currently in hospital:</span> 1365</p>
+                    <p><span style="font-weight: bolder">Total deaths:</span> 678</p>
+                    <br>
+                    <p>
+                        The number of Covid-19 cases in Singapore has grown to <span style="font-weight: bolder">257510</span>, with 2079 new cases reported on 31 Dec.
+                    </p>
+                    <p>
+                        Of these, <span style="font-weight: bolder">2030</span> were reported in the community and <span style="font-weight: bolder">40</span> in the workers’ dormitories. The remaining nine cases were imported.
+                    </p>
+                    <p>
+                        A further <span style="font-weight: bolder">2275</span> patients were discharged, including <span style="font-weight: bolder">366</span> seniors aged above 60. A total of <span style="font-weight: bolder">238909</span> cases have recovered to date.
+                    </p>
+                </div>
+                <div class = "col">
+                    <canvas id="myChart"></canvas>
+                </div>
+            </div>
+        </div>
 
-        <!--Daily Cases (past 2 weeks)-->
-        <canvas id="myChart"></canvas>
     </div>
     <div class="section" id="section2">
-<!--        Vaccination Progress-->
-<!--        For every 100 people in Singapore, 88 have received their first dose and 87 are fully vaccinated as at 14 Dec.-->
-<!--        In addition, the Health Ministry reported that as at 14 Dec, 96 percent of the eligible population (aged 12 years and above) have completed their full regime, or received two doses of Covid-19 vaccines.-->
-<!--        With new Covid-19 variants such as Omicron surfacing, full vaccination will have to include booster shots as well.-->
+        <div class="container">
+            <div class = "row justify-content-center align-items-center">
+                <div class = "col">
+                        <p>
+                            <h1>Vaccination Progress</h1>
+                        </p>
+                        <p>
+                        For every <span style="font-weight: bolder">100</span> people in Singapore, 88 have received their first dose and <span style="font-weight: bolder">87</span> are fully vaccinated as at 14 Dec.
+                        </p>
+                        <p>
+                            In addition, the Health Ministry reported that as at 14 Dec, <span style="font-weight: bolder">96 percent</span> of the eligible population (aged 12 years and above) have completed their full regime, or received two doses of Covid-19 vaccines.
+                        </p>
+                        <p>
+                            With new Covid-19 variants such as <span style="font-weight: bolder">Omicron surfacing</span>, full vaccination will have to include booster shots as well.
+                        </p>
 
-<!--        9 out of 10 Singaporeans have been vaccinated-->
+                        <p>
+                            <span style="font-weight: bolder">9 out of 10 Singaporeans have been vaccinated</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
+
+
+
+    </div>
+    <div class="section" id="section3">
         <svg version="1.1" id="SingaporeMap" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width=70% height=50% viewBox="0 0 512 322.1" style="enable-background:new 0 0 512 322.1; display: block; margin: auto" xml:space="preserve">
 <style type="text/css">
     .st0{fill:#333333;}
@@ -117,8 +172,7 @@
             <circle id="Pasir_Ris" class="st1" cx="424" cy="146.9" r="14"/>
             <circle id="Pioneer" class="st1" cx="112" cy="160.9" r="14"/>
 </svg>
-    </div>
-    <div class="section" id="section3">
+
         <table class="display" id="polyclinicTable">
         <thead>
         <tr>
@@ -211,7 +265,7 @@
         anchors: ['firstPage', 'secondPage', '3rdPage'],
         navigationTooltips: ['First page', 'Second page', 'Third and last page'],
         sectionsColor: ['#C63D0F', '#de6733', '#f1a73b'],
-        continuousVertical: true,
+
     });
 
 
@@ -220,7 +274,7 @@
         labels: labels,
         datasets:
             [{
-                label: 'December 2021',
+                label: 'Daily cases from December 2021',
                 data: [1134, 1056, 986, 771, 756, 721, 654, 742, 689, 512, 455, 376, 244, 103],
                 borderColor: 'rgb(75, 192, 192)',
                 backgroundColor: 'rgb(75, 192, 192)',
@@ -234,7 +288,33 @@
     const config = {
         type: 'line',
         data: data,
-
+        options: {
+            plugins: {
+                legend: {
+                    labels:{
+                        color: 'rgb(1,1,1)'
+                    }
+                }
+            },
+            scales: {
+                x: {
+                    ticks: {
+                        color: "rgb(1,1,1)", // this here
+                    },
+                    grid: {
+                        color: 'rgb(0,0,0)',
+                    }
+                },
+                y: {
+                    ticks: {
+                        color: "rgb(1,1,1)", // this here
+                    },
+                    grid: {
+                        color: 'rgb(0,0,0)',
+                    }
+                }
+            }
+        }
     }
 
     const myChart = new Chart(
